@@ -1,0 +1,3 @@
+[submodule "sputnik"]
+	path = sputnik
+	url = /zz9/yuri/safe/cur/luaforge2/sputnik.git/.git
