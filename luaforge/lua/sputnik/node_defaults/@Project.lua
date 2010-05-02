@@ -1,35 +1,25 @@
+module(...)
+NODE = {}
 
-fields         = [[tags = {}
+NODE.fields         = [[tags = {}
 abstract = {}
 creator = {}
 license = {}
-lua_versions = {}
+--lua_versions = {}
 languages = {}
 website = {}
 releases = {}
-
-
-]]
-title          = "@Project"
-category="projects"
-actions        = [[show = "luaforge.show_project"
+lists = {}
 
 ]]
-config         = ""
-markup_module  = ""
-templates      = ""
-translations   = ""
-permissions    = ""
-html_main      = ""
-html_head      = ""
-html_menu      = ""
-html_logo      = ""
-html_page      = ""
-html_content   = [=[
+NODE.translations = "luaforge/translations"
+NODE.title          = "@Project"
+NODE.category="projects"
+NODE.actions        = [[show = "luaforge.show_project"
 
+]]
 
-
-
+NODE.html_content   = [=[
 
 <table class="project_info">
  <tr>
@@ -53,39 +43,36 @@ html_content   = [=[
 
 <h2>Archived Releases</h2>
 
-<ul>
-$do_releases[[<li>$id</li>]]
-</ul>
+$releases
 
 <h2>Mailing Lists</h2>
 
-<ul>
- <li>luajava-commits</li>
- <li>luajava-developers</li>
-</ul>
+$lists
 
 ]=]
-html_body      = ""
-html_header    = ""
-html_footer    = ""
-html_sidebar   = ""
-html_meta_keywords= ""
-html_meta_description= ""
-redirect_destination= ""
-xssfilter_allowed_tags= ""
-http_cache_control= ""
-http_expires   = ""
-content        = ""
-edit_ui        = [[tags = {1.4, "text_field"}
-abstract = {1.5, "textarea"}
-creator = {1.6, "text_field"}
-license = {1.7, "text_field"}
-lua_versions = {1.8, "text_field"}
-languages = {1.81, "text_field"}
-releases = {1.82, "textarea"}
-website = {1.83, "text_field"}
+
+NODE.edit_ui        = [[
+content = nil
+website = {1.4, "text_field"}
+creator = {1.5, "text_field"}
+license = {1.6, "text_field"}
+abstract = {1.7, "textarea"}
+abstract.editor_modules = {
+                      "resizeable",
+                      "markitup",
+}
+--lua_versions = {1.8, "text_field"}
+languages = {1.8, "text_field"}
+releases = {1.91, "textarea"}
+releases.editor_modules = {
+                      "resizeable",
+                      "markitup",
+}
+lists = {1.92, "textarea"}
+lists.editor_modules = {
+                      "resizeable",
+                      "markitup",
+}
+tags = {1.95, "text_field"}
 
 ]]
-admin_edit_ui  = ""
-breadcrumb     = ""
-save_hook      = ""
